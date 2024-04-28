@@ -45,8 +45,8 @@ def calculate_ration(bw, lwg):
 
 def main():
     st.title("Beef Cattle Ration Calculator")
-     """The Hay used here contains 85% dry matter and 8 MJ energy/Kg DM
-     and the Concentrate contains 88% dry matter and 12.5 MJ/Kg DM"""
+    """The Hay used here contains 85% dry matter and 8 MJ energy/Kg DM
+    and the Concentrate contains 88% dry matter and 12.5 MJ/Kg DM"""
 
 
     bw = st.number_input("Enter body weight:", min_value=0.0, step=1.0)

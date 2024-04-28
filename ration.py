@@ -18,7 +18,7 @@ def calculate_ration(bw, lwg):
     elif bw > 300 and lwg > 0.9:
         dmi = bw * .040
     elif bw < 160 and lwg > .5:
-        dmi = bw * .05
+        dmi = bw * .035
     else:
         dmi = bw * 0.015
     

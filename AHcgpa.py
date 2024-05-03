@@ -1,12 +1,12 @@
 import streamlit as st
 
 def grade():
-    present_cgpa = st.number_input("Enter your present CGPA:")
-    target_cgpa = st.number_input("Enter your targeted CGPA:")
+    present_cgpa = st.number_input("Enter your present CGPA:"value=None)
+    target_cgpa = st.number_input("Enter your targeted CGPA:"value=None)
     if target_cgpa > 4:
         st.write("Targeted CGPA cannot be greater than 4.")
         return
-    Number_of_semester_passed = st.number_input("Number of semester passed to obtain present CGPA:", step=1)
+    Number_of_semester_passed = st.number_input("Number of semester passed to obtain present CGPA:",value=None, step=1)
 
     if Number_of_semester_passed == 1:
       total_earned_credit = 20

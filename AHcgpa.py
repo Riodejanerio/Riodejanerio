@@ -24,8 +24,8 @@ def grade():
       total_earned_credit = 157
     elif Number_of_semester_passed == 8:
       total_earned_credit = 180
-    #else:
-      #st.write("Invalid number of semesters.")
+    else:
+      st.write("Please Enter Values")
       return
 
     total_credit = 192

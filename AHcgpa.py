@@ -28,12 +28,11 @@ def grade():
     
     
     
-    present_grade = present_cgpa * total_earned_credit
     target_grade = target_cgpa * total_credit
-    
+    present_grade = present_cgpa * total_earned_credit
     required_grade = target_grade - present_grade
     required_cgpa = required_grade / (total_credit - total_earned_credit)
-
+    
     if required_cgpa > 4:
         st.write("You are not able to gain the targeted CGPA. Better luck next time.")
     else:

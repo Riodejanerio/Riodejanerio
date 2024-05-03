@@ -24,8 +24,8 @@ def grade():
       total_earned_credit = 157
     elif Number_of_semester_passed == 8:
       total_earned_credit = 180
-    else:
-      st.write("Invalid number of semesters.")
+    #else:
+      #st.write("Invalid number of semesters.")
       return
 
     total_credit = 192
@@ -40,4 +40,10 @@ def grade():
     else:
         st.write(f"You have to obtain {required_cgpa:.3f} CGPA per rest of the semester")
 
-grade()
+def main():
+    st.title("Required CGPA Calculator for Animal Husbandry Faculty")
+    grade()
+    st.text("Developed by 58th Batch of BAU")
+
+if __name__ == "__main__":
+    main()

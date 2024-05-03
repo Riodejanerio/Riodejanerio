@@ -1,8 +1,8 @@
 import streamlit as st
 
 def grade():
-    present_cgpa = st.number_input("Enter your present CGPA:",value=None)
-    target_cgpa = st.number_input("Enter your targeted CGPA:",value=None)
+    present_cgpa = st.number_input("Enter your present CGPA:")
+    target_cgpa = st.number_input("Enter your targeted CGPA:")
     if target_cgpa > 4:
         st.write("Targeted CGPA cannot be greater than 4.")
         return
@@ -25,7 +25,7 @@ def grade():
     elif Number_of_semester_passed == 8:
       total_earned_credit = 180
     else:
-      st.write("Please Enter Values")
+      st.write("Invalid number of semesters.")
       return
 
     total_credit = 192
@@ -40,11 +40,4 @@ def grade():
     else:
         st.write(f"You have to obtain {required_cgpa:.3f} CGPA per rest of the semester")
 
-def main():
-    st.title("Required CGPA Calculator for Animal Husbandry Faculty")
-    grade()
-
-    st.text("Developed by 58th Batch of BAU")
-
-if __name__ == "__main__":
-    main()
+grade()

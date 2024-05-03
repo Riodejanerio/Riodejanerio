@@ -1,5 +1,5 @@
 import streamlit as st
-
+total_credit = 192
 def grade():
     present_cgpa = st.number_input("Enter your present CGPA:", value=None)
     target_cgpa = st.number_input("Enter your targeted CGPA:", value=None)
@@ -30,7 +30,7 @@ def grade():
     
     present_grade = present_cgpa * total_earned_credit
     target_grade = target_cgpa * total_credit
-    total_credit = 192
+    
     required_grade = target_grade - present_grade
     required_cgpa = required_grade / (total_credit - total_earned_credit)
 

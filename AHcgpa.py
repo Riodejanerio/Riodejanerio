@@ -25,10 +25,12 @@ def grade():
     if Number_of_semester_passed == 8:
       total_earned_credit = 180
 
-    total_credit = 192
     
-    target_grade = target_cgpa * total_credit
+    
+    
     present_grade = present_cgpa * total_earned_credit
+    target_grade = target_cgpa * total_credit
+    total_credit = 192
     required_grade = target_grade - present_grade
     required_cgpa = required_grade / (total_credit - total_earned_credit)
 

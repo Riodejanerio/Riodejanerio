@@ -1,8 +1,8 @@
 import streamlit as st
 
 def grade():
-    present_cgpa = st.number_input("Enter your present CGPA:"value=None)
-    target_cgpa = st.number_input("Enter your targeted CGPA:"value=None)
+    present_cgpa = st.number_input("Enter your present CGPA:",,value=None)
+    target_cgpa = st.number_input("Enter your targeted CGPA:",value=None)
     if target_cgpa > 4:
         st.write("Targeted CGPA cannot be greater than 4.")
         return

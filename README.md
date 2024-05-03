@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @Riodejanerio
+- 👋 Hi, I’m A2B
 - 👀 I’m interested in python
 - 🌱 I’m currently learning python
 - 💞️ I’m looking to collaborate on .. do not know yet.

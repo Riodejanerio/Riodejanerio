@@ -46,7 +46,7 @@ def main():
     st.write("")
     st.write("")
     st.write("")
-    st.markdown("<b><i>Developed by 58th Batch of BAU</i></b>", unsafe_allow_html=True)
+    st.markdown("<b style='font-family: Roboto;'>Developed by 58th Batch of BAU</b>", unsafe_allow_html=True)
 
 
 if __name__ == "__main__":

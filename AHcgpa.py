@@ -46,7 +46,8 @@ def main():
     st.write("")
     st.write("")
     st.write("")
-    st.text("Developed by 58th Batch of BAU")
+    st.markdown("<b><i>Developed by 58th Batch of BAU</i></b>", unsafe_allow_html=True)
+
 
 if __name__ == "__main__":
     main()

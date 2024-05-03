@@ -36,7 +36,7 @@ def grade():
     required_cgpa = required_grade / (total_credit - total_earned_credit)
 
     if required_cgpa > 4:
-        st.write("You are not able to gain the targeted CGPA. Better luck next time.")
+        st.write("You are not eligible to get the targeted CGPA")
     else:
         st.write(f"You have to obtain {required_cgpa:.3f} CGPA per rest of the semester")
 

@@ -43,6 +43,10 @@ def grade():
 def main():
     st.title("Required CGPA Calculator for Animal Husbandry Faculty")
     grade()
+    print()
+    print()
+    print()
+    print()
     st.text("Developed by 58th Batch of BAU")
 
 if __name__ == "__main__":

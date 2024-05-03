@@ -37,4 +37,8 @@ def grade():
     else:
         st.write(f"You have to obtain {required_cgpa:.3f} CGPA per rest of the semester")
 
-grade()
+def main():
+    st.title("Required CGPA Calculator for Animal Husbandry Faculty")
+
+if __name__ == "__main__":
+    main()

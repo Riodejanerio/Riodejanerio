@@ -40,6 +40,8 @@ def grade():
 def main():
     st.title("Required CGPA Calculator for Animal Husbandry Faculty")
     grade()
+    .
+    .
     st.text("Developed by 58th Batch of BAU")
 
 

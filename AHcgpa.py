@@ -1,29 +1,32 @@
 import streamlit as st
 
 def grade():
-    present_cgpa = st.number_input("Enter your present CGPA:", value=None)
-    target_cgpa = st.number_input("Enter your targeted CGPA:", value=None)
-    if target_cgpa is not None and target_cgpa > 4:
+    present_cgpa = st.number_input("Enter your present CGPA:")
+    target_cgpa = st.number_input("Enter your targeted CGPA:")
+    if target_cgpa > 4:
         st.write("Targeted CGPA cannot be greater than 4.")
         return
-    Number_of_semester_passed = st.number_input("Number of semester passed to obtain present CGPA:", value=None, step=1)
+    Number_of_semester_passed = st.number_input("Number of semester passed to obtain present CGPA:", step=1)
 
     if Number_of_semester_passed == 1:
       total_earned_credit = 20
-    if Number_of_semester_passed == 2:
+    elif Number_of_semester_passed == 2:
       total_earned_credit = 43
-    if Number_of_semester_passed == 3:
+    elif Number_of_semester_passed == 3:
       total_earned_credit = 67
-    if Number_of_semester_passed == 4:
+    elif Number_of_semester_passed == 4:
       total_earned_credit = 89
-    if Number_of_semester_passed == 5:
+    elif Number_of_semester_passed == 5:
       total_earned_credit = 112
-    if Number_of_semester_passed == 6:
+    elif Number_of_semester_passed == 6:
       total_earned_credit = 134
-    if Number_of_semester_passed == 7:
+    elif Number_of_semester_passed == 7:
       total_earned_credit = 157
-    if Number_of_semester_passed == 8:
+    elif Number_of_semester_passed == 8:
       total_earned_credit = 180
+    else:
+      st.write("Invalid number of semesters.")
+      return
 
     total_credit = 192
     

@@ -45,7 +45,6 @@ def main():
     grade()
     st.write("")
     st.write("")
-    st.write("")
     st.markdown("<b style='font-family: Roboto;'>Developed by 58th Batch of BAU</b>", unsafe_allow_html=True)
 
 

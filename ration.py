@@ -3,17 +3,23 @@ import numpy as np
 
 def main():
     st.title("Beef Cattle Ration Calculator")
-    """Example:
+    """
+    Example: '\n'
     Body weight: 350 '\n'
+    live weight gain: 0.7 kg '\n'
     DM% of hay: 85 '\n'
+    Energy (MJ) present in per kg DM of hay: 8 MJ '\n'
+    DM% of concentrate: 88 '\n
+    Energy (MJ) present in per kg DM of concentrate: 12 '\n'
     """
 
     bw = st.number_input("Enter body weight:", min_value=0.0, step=1.0)
+    lwg = st.number_input("Enter desired live weight gain:", min_value=0.0, step=0.1)
     dmhay = st.number_input("Enter DM% of hay:", min_value=0.0, step=1.0)
     meh = st.number_input("Enter energy (MJ) present in per kg DM of hay:", min_value=0.0, step=1.0)
     dmconc = st.number_input("Enter DM% of concentrate:", min_value=0.0, step=1.0)
     mec = st.number_input("Enter energy (MJ) present in per kg DM of concentrate:", min_value=0.0, step=1.0)
-    lwg = st.number_input("Enter desired live weight gain:", min_value=0.0, step=0.1)
+    
 
     if st.button("Calculate Ration"):
         hay_val, conc_val = calculate_ration(bw, lwg, dmhay, meh, dmconc, mec)

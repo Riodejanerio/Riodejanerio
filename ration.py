@@ -15,15 +15,7 @@ def main():
         """, 
         unsafe_allow_html=True
     )
-    st.markdown(
-        """
-        .
-        .
-        .
-        
-        """, 
-        unsafe_allow_html=True
-    )
+
     bw_input = st.text_input("Enter body weight:")
     dmhay_input = st.text_input("Enter DM% of hay:")
     meh_input = st.text_input("Enter energy (MJ) present in per kg DM of hay:")
@@ -39,14 +31,15 @@ def main():
     mec = float(mec_input) if mec_input else None
     lwg = float(lwg_input) if lwg_input else None
 
-    if st.button("Calculate Ration") and None not in (bw, dmhay, meh, dmconc, mec, lwg):
-        hay_val, conc_val = calculate_ration(bw, lwg, dmhay, meh, dmconc, mec)
-        if hay_val is not None and conc_val is not None:
-            st.write(f"Required Hay: {hay_val:.2f} kg, and Concentrate: {conc_val:.2f} kg for daily live weight gain of {lwg:.2f} kg.")
+    if st.button("Calculate Ration"):
+        if None in (bw, dmhay, meh, dmconc, mec, lwg):
+            st.write("Please fill in all input fields.")
         else:
-            st.write("No suitable ration found.")
-    elif st.button("Calculate Ration"):
-        st.write("Please fill in all input fields.")
+            hay_val, conc_val = calculate_ration(bw, lwg, dmhay, meh, dmconc, mec)
+            if hay_val is not None and conc_val is not None:
+                st.write(f"Required Hay: {hay_val:.2f} kg, and Concentrate: {conc_val:.2f} kg for daily live weight gain of {lwg:.2f} kg.")
+            else:
+                st.write("No suitable ration found.")
     
 def calculate_ega(bw, lwg):
     ega = (6.28 * lwg + 0.0188 * bw * lwg) / (1 - lwg * 0.3)

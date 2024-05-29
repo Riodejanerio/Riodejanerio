@@ -6,7 +6,7 @@ def main():
     st.markdown(
         """
         Example: <br>
-        Body weight: 350 <br>
+        Body weight: 350 kg <br>
         Live weight gain: 0.7 kg <br>
         DM% of hay: 85 <br>
         Energy (MJ) present in per kg DM of hay: 8 MJ <br>

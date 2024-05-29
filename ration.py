@@ -26,7 +26,7 @@ def main():
     )
 
     bw = st.number_input("Enter body weight:", min_value=0.0, step=1.0)
-    lwg = st.number_input("Enter desired live weight gain:", min_value=0.0, step=0.1)
+    lwg = st.number_input("Enter desired live weight gain:", min_value=0.0, step=0.01)
     dmhay = st.number_input("Enter DM% of hay:", min_value=0.0, step=1.0)
     meh = st.number_input("Enter energy (MJ) present in per kg DM of hay:", min_value=0.0, step=1.0)
     dmconc = st.number_input("Enter DM% of concentrate:", min_value=0.0, step=1.0)
@@ -55,7 +55,7 @@ def calculate_ration(bw, lwg, dmhay, meh, dmconc, mec):
         dmi = bw * 0.02
     elif bw > 300 and lwg > 0.9:
         dmi = bw * 0.040
-    elif bw <= 160 and lwg > 0.5:
+    elif bw <= 160 and lwg >= 0.5:
         dmi = bw * 0.032
     else:
         dmi = bw * 0.015

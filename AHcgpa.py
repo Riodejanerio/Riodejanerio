@@ -1,13 +1,11 @@
 import streamlit as st
 
-def grade():
-    present_cgpa = st.number_input("Enter your present CGPA:" )
-    target_cgpa = st.number_input("Enter your targeted CGPA:" )
+def grade(present_cgpa, target_cgpa, Number_of_semester_passed):
     if target_cgpa > 4:
         st.write("Targeted CGPA cannot be greater than 4.")
         return
-    Number_of_semester_passed = st.number_input("Number of semesters passed to obtain present CGPA:", step=1)
 
+    # Map the number of semesters to the total earned credit
     if Number_of_semester_passed == 1:
         total_earned_credit = 20
     elif Number_of_semester_passed == 2:
@@ -47,9 +45,16 @@ def main():
         thus you have to maintain at least 3.65 for the rest of the semesters.
     """)
 
+    present_cgpa = st.number_input("Enter your present CGPA:")
+    target_cgpa = st.number_input("Enter your targeted CGPA:")
+    Number_of_semester_passed = st.number_input("Number of semesters passed to obtain present CGPA:", step=1)
+
     if st.button("Calculate"):
-        grade()
-    
+        if present_cgpa and target_cgpa and Number_of_semester_passed:
+            grade(present_cgpa, target_cgpa, Number_of_semester_passed)
+        else:
+            st.write("Please fill in all input fields.")
+
     st.write("")
     st.write("")
     st.markdown("<b style='font-family: Roboto;'>Developed by AH-55th Batch of BAU</b>", unsafe_allow_html=True)

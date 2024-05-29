@@ -4,13 +4,13 @@ import numpy as np
 def main():
     st.title("Beef Cattle Ration Calculator")
     """
-    Example: '\n'
-    Body weight: 350 '\n'
-    live weight gain: 0.7 kg '\n'
-    DM% of hay: 85 '\n'
-    Energy (MJ) present in per kg DM of hay: 8 MJ '\n'
-    DM% of concentrate: 88 '\n
-    Energy (MJ) present in per kg DM of concentrate: 12 '\n'
+    Example: 
+    Body weight: 350 \n'\
+    live weight gain: 0.7 kg \n'\
+    DM% of hay: 85 \n'\
+    Energy (MJ) present in per kg DM of hay: 8 MJ \n'\
+    DM% of concentrate: 88 \n'\
+    Energy (MJ) present in per kg DM of concentrate: 12 
     """
 
     bw = st.number_input("Enter body weight:", min_value=0.0, step=1.0)

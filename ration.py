@@ -1,5 +1,27 @@
 import streamlit as st
 import numpy as np
+def main():
+    st.title("Beef Cattle Ration Calculator")
+    """The Hay used here contains 85% dry matter and 8 MJ energy/Kg DM
+    and the Concentrate contains 88% dry matter and 12.5 MJ/Kg DM"""
+
+
+    bw = st.number_input("Enter body weight:", min_value=0.0, step=1.0)
+    dmhay= st.number_input("Enter DM% of hay:", min_value=0.0, step=1.0)
+    meh = st.number_input("Enter energy (MJ) present in per kg DM of hay:", min_value=0.0, step=1.0)
+    dmconc = st.number_input("Enter DM% of concentrate:", min_value=0.0, step=1.0)
+    mec = st.number_input("Enter energy (MJ) present in per kg DM of concentrate:", min_value=0.0, step=1.0)
+    lwg = st.number_input("Enter desired live weight gain:", min_value=0.0, step=0.1)
+
+    
+
+    if st.button("Calculate Ration"):
+        hay_val, conc_val = calculate_ration(bw, lwg)
+        st.write(f"Required Hay: {hay_val:.2f} kg, and Concentrate: {conc_val:.2f} kg for daily live weight gain of {lwg:.2f} kg.")
+
+if __name__ == "__main__":
+    main()
+
 
 def calculate_ega(bw, lwg):
     ega = (6.28 * lwg + 0.0188 * bw * lwg) / (1 - lwg * 0.3)
@@ -51,24 +73,4 @@ def calculate_ration(bw, lwg):
             if abs(Eg - ega) < 0.1:  # Adjust tolerance as needed
                 return hay_val, conc_val
 
-def main():
-    st.title("Beef Cattle Ration Calculator")
-    """The Hay used here contains 85% dry matter and 8 MJ energy/Kg DM
-    and the Concentrate contains 88% dry matter and 12.5 MJ/Kg DM"""
 
-
-    bw = st.number_input("Enter body weight:", min_value=0.0, step=1.0)
-    dmhay= st.number_input("Enter DM% of hay:", min_value=0.0, step=1.0)
-    meh = st.number_input("Enter energy (MJ) present in per kg DM of hay:", min_value=0.0, step=1.0)
-    dmconc = st.number_input("Enter DM% of concentrate:", min_value=0.0, step=1.0)
-    mec = st.number_input("Enter energy (MJ) present in per kg DM of concentrate:", min_value=0.0, step=1.0)
-    lwg = st.number_input("Enter desired live weight gain:", min_value=0.0, step=0.1)
-
-    
-
-    if st.button("Calculate Ration"):
-        hay_val, conc_val = calculate_ration(bw, lwg)
-        st.write(f"Required Hay: {hay_val:.2f} kg, and Concentrate: {conc_val:.2f} kg for daily live weight gain of {lwg:.2f} kg.")
-
-if __name__ == "__main__":
-    main()

@@ -6,30 +6,30 @@ def grade():
     if target_cgpa > 4:
         st.write("Targeted CGPA cannot be greater than 4.")
         return
-    Number_of_semester_passed = st.number_input("Number of semester passed to obtain present CGPA:", step=1)
+    Number_of_semester_passed = st.number_input("Number of semesters passed to obtain present CGPA:", step=1)
 
     if Number_of_semester_passed == 1:
-      total_earned_credit = 20
+        total_earned_credit = 20
     elif Number_of_semester_passed == 2:
-      total_earned_credit = 43
+        total_earned_credit = 43
     elif Number_of_semester_passed == 3:
-      total_earned_credit = 67
+        total_earned_credit = 67
     elif Number_of_semester_passed == 4:
-      total_earned_credit = 89
+        total_earned_credit = 89
     elif Number_of_semester_passed == 5:
-      total_earned_credit = 112
+        total_earned_credit = 112
     elif Number_of_semester_passed == 6:
-      total_earned_credit = 134
+        total_earned_credit = 134
     elif Number_of_semester_passed == 7:
-      total_earned_credit = 157
+        total_earned_credit = 157
     elif Number_of_semester_passed == 8:
-      total_earned_credit = 180
+        total_earned_credit = 180
     else:
-      st.write(".")
-      return
+        st.write("Invalid number of semesters.")
+        return
 
     total_credit = 192
-    
+
     target_grade = target_cgpa * total_credit
     present_grade = present_cgpa * total_earned_credit
     required_grade = target_grade - present_grade
@@ -38,17 +38,21 @@ def grade():
     if required_cgpa > 4:
         st.write("You are not eligible to get the targeted CGPA")
     else:
-        st.write(f"You have to obtain {required_cgpa:.3f} CGPA per rest of the semester")
+        st.write(f"You have to obtain {required_cgpa:.3f} CGPA per rest of the semesters")
 
 def main():
     st.title("Required CGPA Calculator for Animal Husbandry Faculty")
-    """ For example, after 2 semester your CGPA is 3.40 and your targeted CGPA is 3.60, thus you have to maintain atleast 3.65 for rest of the semesters"""
+    st.markdown("""
+        For example, after 2 semesters your CGPA is 3.40 and your targeted CGPA is 3.60, 
+        thus you have to maintain at least 3.65 for the rest of the semesters.
+    """)
+
+    if st.button("Calculate"):
+        grade()
     
-    grade()
     st.write("")
     st.write("")
     st.markdown("<b style='font-family: Roboto;'>Developed by AH-55th Batch of BAU</b>", unsafe_allow_html=True)
-
 
 if __name__ == "__main__":
     main()

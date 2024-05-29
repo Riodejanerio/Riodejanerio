@@ -39,8 +39,8 @@ def calculate_ration(bw, lwg):
 
     ega = calculate_ega(bw, lwg)
 
-    for hay_val in hay:
-        for conc_val in conc:
+    for conc_val in conc:
+        for hay_val in  hay:
             dm = hay_val * (dmhay / 100) + conc_val * (dmconc / 100)
             mer = (hay_val * (dmhay / 100) * 8) + (conc_val * (dmconc / 100) * 12.5)
             Mm = 8.3 + 0.091 * bw

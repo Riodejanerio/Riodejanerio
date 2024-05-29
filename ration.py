@@ -24,7 +24,35 @@ def main():
         """, 
         unsafe_allow_html=True
     )
+    bw_input = st.text_input("Enter body weight:")
+    dmhay_input = st.text_input("Enter DM% of hay:")
+    meh_input = st.text_input("Enter energy (MJ) present in per kg DM of hay:")
+    dmconc_input = st.text_input("Enter DM% of concentrate:")
+    mec_input = st.text_input("Enter energy (MJ) present in per kg DM of concentrate:")
+    lwg_input = st.text_input("Enter desired live weight gain:")
 
+    # Convert inputs to float if not empty
+    bw = float(bw_input) if bw_input else None
+    dmhay = float(dmhay_input) if dmhay_input else None
+    meh = float(meh_input) if meh_input else None
+    dmconc = float(dmconc_input) if dmconc_input else None
+    mec = float(mec_input) if mec_input else None
+    lwg = float(lwg_input) if lwg_input else None
+
+    if st.button("Calculate Ration") and None not in (bw, dmhay, meh, dmconc, mec, lwg):
+        hay_val, conc_val = calculate_ration(bw, lwg, dmhay, meh, dmconc, mec)
+        if hay_val is not None and conc_val is not None:
+            st.write(f"Required Hay: {hay_val:.2f} kg, and Concentrate: {conc_val:.2f} kg for daily live weight gain of {lwg:.2f} kg.")
+        else:
+            st.write("No suitable ration found.")
+    elif st.button("Calculate Ration"):
+        st.write("Please fill in all input fields.")
+
+
+
+
+    
+    """
     bw = st.number_input("Enter body weight:", min_value=0.0, step=1.0)
     lwg = st.number_input("Enter desired live weight gain:", min_value=0.0, step=0.01)
     dmhay = st.number_input("Enter DM% of hay:", min_value=0.0, step=1.0)
@@ -39,7 +67,8 @@ def main():
             st.write(f"Required Hay: {hay_val:.2f} kg, and Concentrate: {conc_val:.2f} kg for daily live weight gain of {lwg:.2f} kg.")
         else:
             st.write("No suitable ration found.")
-
+    """
+    
 def calculate_ega(bw, lwg):
     ega = (6.28 * lwg + 0.0188 * bw * lwg) / (1 - lwg * 0.3)
     return ega

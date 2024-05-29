@@ -17,19 +17,21 @@ def main():
     )
 
     bw_input = st.text_input("Enter body weight:")
+    lwg_input = st.text_input("Enter desired live weight gain:")
+
     dmhay_input = st.text_input("Enter DM% of hay:")
     meh_input = st.text_input("Enter energy (MJ) present in per kg DM of hay:")
     dmconc_input = st.text_input("Enter DM% of concentrate:")
     mec_input = st.text_input("Enter energy (MJ) present in per kg DM of concentrate:")
-    lwg_input = st.text_input("Enter desired live weight gain:")
-
+    
     # Convert inputs to float if not empty
     bw = float(bw_input) if bw_input else None
+    lwg = float(lwg_input) if lwg_input else None
     dmhay = float(dmhay_input) if dmhay_input else None
     meh = float(meh_input) if meh_input else None
     dmconc = float(dmconc_input) if dmconc_input else None
     mec = float(mec_input) if mec_input else None
-    lwg = float(lwg_input) if lwg_input else None
+    
 
     if st.button("Calculate Ration"):
         if None in (bw, dmhay, meh, dmconc, mec, lwg):

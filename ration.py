@@ -16,9 +16,9 @@ def main():
         unsafe_allow_html=True
     )
 
+    
     bw_input = st.text_input("Enter body weight:")
     lwg_input = st.text_input("Enter desired live weight gain:")
-
     dmhay_input = st.text_input("Enter DM% of hay:")
     meh_input = st.text_input("Enter energy (MJ) present in per kg DM of hay:")
     dmconc_input = st.text_input("Enter DM% of concentrate:")

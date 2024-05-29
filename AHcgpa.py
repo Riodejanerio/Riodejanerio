@@ -42,7 +42,7 @@ def main():
     st.title("Required CGPA Calculator for Animal Husbandry Faculty")
     st.markdown("""
         For example, after 2 semesters your CGPA is 3.40 and your targeted CGPA is 3.60, 
-        thus you have to maintain at least 3.65 for the rest of the semesters.
+        thus you have to maintain at least 3.658 for the rest of the semesters.
     """)
 
     present_cgpa = st.number_input("Enter your present CGPA:")

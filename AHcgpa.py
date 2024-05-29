@@ -42,6 +42,8 @@ def grade():
 
 def main():
     st.title("Required CGPA Calculator for Animal Husbandry Faculty")
+    """ For example, after 2 semester your CGPA is 3.40 and your targeted CGPA is 3.60, thus you have to maintain atleast 3.65 for rest of the semesters"""
+    
     grade()
     st.write("")
     st.write("")

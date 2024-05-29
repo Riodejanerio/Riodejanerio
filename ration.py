@@ -3,8 +3,10 @@ import numpy as np
 
 def main():
     st.title("Beef Cattle Ration Calculator")
-    """The Hay used here contains 85% dry matter and 8 MJ energy/Kg DM
-    and the Concentrate contains 88% dry matter and 12.5 MJ/Kg DM"""
+    """Example:
+    Body weight: 350 '\n'
+    DM% of hay: 85 '\n'
+    """
 
     bw = st.number_input("Enter body weight:", min_value=0.0, step=1.0)
     dmhay = st.number_input("Enter DM% of hay:", min_value=0.0, step=1.0)

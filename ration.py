@@ -15,6 +15,15 @@ def main():
         """, 
         unsafe_allow_html=True
     )
+    st.markdown(
+        """
+        .
+        .
+        .
+        
+        """, 
+        unsafe_allow_html=True
+    )
 
     bw = st.number_input("Enter body weight:", min_value=0.0, step=1.0)
     lwg = st.number_input("Enter desired live weight gain:", min_value=0.0, step=0.1)

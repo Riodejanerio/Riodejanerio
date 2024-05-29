@@ -11,7 +11,7 @@ def main():
         DM% of hay: 85 <br>
         Energy (MJ) present in per kg DM of hay: 8 MJ <br>
         DM% of concentrate: 88 <br>
-        Energy (MJ) present in per kg DM of concentrate: 12 
+        Energy (MJ) present in per kg DM of concentrate: 12 MJ
         """, 
         unsafe_allow_html=True
     )

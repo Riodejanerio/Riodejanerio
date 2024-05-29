@@ -28,21 +28,21 @@ def calculate_ration(bw, lwg):
     hay = []
     for value in np.arange(start_value * 100, end_value * 100 + 1, 1):
         hay.append(value / 100)
-    dmhay = 85
+    #dmhay = 85
 
     start_value = 0.2 * dmi
     end_value = 0.3 * dmi
     conc = []
     for value in np.arange(start_value * 100, end_value * 100 + 1, 1):
         conc.append(value / 100)
-    dmconc = 88
+    #dmconc = 88
 
     ega = calculate_ega(bw, lwg)
 
     for conc_val in conc:
         for hay_val in  hay:
             dm = hay_val * (dmhay / 100) + conc_val * (dmconc / 100)
-            mer = (hay_val * (dmhay / 100) * 8) + (conc_val * (dmconc / 100) * 12.5)
+            mer = (hay_val * (dmhay / 100) * meh) + (conc_val * (dmconc / 100) * mec)
             Mm = 8.3 + 0.091 * bw
             MD = mer / dm
             MEP = mer - Mm
@@ -58,7 +58,13 @@ def main():
 
 
     bw = st.number_input("Enter body weight:", min_value=0.0, step=1.0)
-    lwg = st.number_input("Enter live weight gain:", min_value=0.0, step=0.1)
+    dmhay= st.number_input("Enter DM% of hay:", min_value=0.0, step=1.0)
+    meh = st.number_input("Enter energy (MJ) present in per kg DM of hay:", min_value=0.0, step=1.0)
+    dmconc = st.number_input("Enter DM% of concentrate:", min_value=0.0, step=1.0)
+    mec = st.number_input("Enter energy (MJ) present in per kg DM of concentrate:", min_value=0.0, step=1.0)
+    lwg = st.number_input("Enter desired live weight gain:", min_value=0.0, step=0.1)
+
+    
 
     if st.button("Calculate Ration"):
         hay_val, conc_val = calculate_ration(bw, lwg)
